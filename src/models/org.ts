@@ -1,30 +1,23 @@
+import { string } from "joi";
 import mongoose, { Document, Schema } from "mongoose";
+import severityModel from "./severity";
 
-
-const severityEnum = ["Critical", "Major", "Minor"] as const;
-type Severity = typeof severityEnum[number];
-
-interface IOrg extends Document {
-  overspeeding: Severity;
-  illegal_Parking: Severity;
-  tampering: Severity;
-  deviation: Severity;
-  connection_Loss: Severity;
-  Eco_driving: Severity;
-}
-
-const OrgSchema: Schema = new Schema(
+const orgData = new Schema(
   {
-    overspeeding: { type: String, required: true, enum: severityEnum },
-    illegal_Parking: { type: String, required: true, enum: severityEnum },
-    tampering: { type: String, required: true, enum: severityEnum },
-    deviation: { type: String, required: true, enum: severityEnum },
-    connection_Loss: { type: String, required: true, enum: severityEnum },
-    Eco_driving: { type: String, required: true, enum: severityEnum },
+    name: { 
+        type: String, 
+        required: true, 
+        trim: true, 
+        unique: true
+     },
+    players: [{ 
+        type: mongoose.Types.ObjectId , ref: 'Severity' 
+    }],
   },
   { timestamps: true }
 );
 
-const OrgModel = mongoose.model<IOrg>("Organization", OrgSchema);
+const orgModel = mongoose.model("Organization", orgData);
+export default orgModel
 
-export default OrgModel;
+
