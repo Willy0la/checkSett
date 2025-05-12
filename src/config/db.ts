@@ -5,7 +5,7 @@ config()
 
 const dbUri = process.env.DB
 
-const connectDb = async ()=> {
+const connectDB = async ()  => {
 
     if (!dbUri) {
         console.error("❌ Database URI not found in environment variables.");
@@ -20,4 +20,4 @@ const connectDb = async ()=> {
     }
 }
 
-export default connectDb
+export default connectDB

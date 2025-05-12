@@ -1,4 +1,5 @@
 import mongoose, { Document, Schema } from "mongoose";
+
 const severityEnum = ['Critical','Major','Minor'] as const
 type Severity = (typeof severityEnum)[number]
 //any object that looks like SeverityData will have 6 properties and each must be one of the Severity union type 

@@ -1,13 +1,14 @@
 import express, { Request, Response } from "express";
 import dotenv from "dotenv"
 import morgan from "morgan";
+import connectDB from "./config/db";
 import cookieParser from "cookie-parser";
-import connectDb from "./config/db"
 import severityRoute from "./routes/orgRoute";
+
 
 dotenv.config()
 
-connectDb()
+connectDB()
 const app = express()
 
 const PORT = process.env.PORT || 5000

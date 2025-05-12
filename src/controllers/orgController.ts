@@ -7,14 +7,14 @@ import { Request, Response, NextFunction } from "express"
 export const createOrganizationSeverity = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-           const{ overspeeding,illegal_Parking,tampering,deviation,connection_Loss,Eco_driving,} = req.body;
+           const{ overspeeding,illegalParking,tampering,deviation,connectionLoss,ecoDriving,} = req.body;
            const newOrg = new severityModel({
             overspeeding:overspeeding,
-            illegal_Parking:illegal_Parking,
+            illegalParking:illegalParking,
             tampering:tampering,
             deviation:deviation,
-            connection_Loss: connection_Loss,
-            Eco_driving:Eco_driving,
+            connectionLoss: connectionLoss,
+            ecodriving:ecoDriving,
           });
 
          const savedOrg = await newOrg.save()
