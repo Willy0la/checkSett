@@ -1,10 +1,11 @@
-import STATUS from "../constant/constant"
+import STATUS from "../constant/constant.js"
 import severityModel from "../models/severity"
-import { Request, Response, NextFunction } from "express"
+import { Request, Response, NextFunction } from "express";
+
 
 //express validator
 
-export const createOrganizationSeverity = async (req: Request, res: Response, next: NextFunction) => {
+ const createOrganizationSeverity = async (req: Request, res: Response, next: NextFunction)=> {
 
     try {
            const{ overspeeding,illegalParking,tampering,deviation,connectionLoss,ecoDriving,} = req.body;
@@ -27,3 +28,5 @@ export const createOrganizationSeverity = async (req: Request, res: Response, ne
         return next(customError)
     }
 }
+
+export default createOrganizationSeverity

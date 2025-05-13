@@ -1,9 +1,10 @@
+import { config } from "dotenv";
+config();
+
 import mongoose from "mongoose";
-import { config } from "dotenv"
 
-config()
 
-const dbUri = process.env.DB
+const dbUri:string | undefined = process.env.DB
 
 const connectDB = async ()  => {
 

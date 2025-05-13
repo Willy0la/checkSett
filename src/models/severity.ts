@@ -1,4 +1,5 @@
-import mongoose, { Document, Schema } from "mongoose";
+
+import mongoose ,{ Document, Schema} from "mongoose"
 
 const severityEnum = ['Critical','Major','Minor'] as const
 type Severity = (typeof severityEnum)[number]

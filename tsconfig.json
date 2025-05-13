@@ -2,12 +2,13 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "CommonJS",
-    "strict": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
+    "outDir": "./dist",
+    "strict": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist"
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts", "src/index.ts", "src/config/db.ts"],
+  "include": ["src", "index.ts"],
   "exclude": ["node_modules"]
 }
