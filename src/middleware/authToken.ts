@@ -1,3 +1,2 @@
-import { Request, Response, NextFunction } from "express";
-import STATUS from "../constant/constant";
-
+import { Request, Response, NextFunction } from 'express';
+import STATUS from '../constant/constant.js';
